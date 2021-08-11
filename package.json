@@ -1,7 +1,7 @@
 {
   "name": "bot-adapter",
-  "version": "0.0.1",
-  "description": "bot adapter",
+  "version": "0.0.2",
+  "description": "bot adapter for wechaty,socket.io etc...",
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn src/index.ts",

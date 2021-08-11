@@ -1,3 +1,4 @@
+import Container from "typedi";
 import { ControllerMetadata } from "../metadata/ControllerMetadata";
 import { MetadataArgsStorage } from "./MetadataArgsStorage";
 
@@ -8,8 +9,16 @@ export interface Handlers<TMsg = any> {
 export class Adapter {
   private metadataArgsStorage: MetadataArgsStorage;
   private controllerMetadatas: ControllerMetadata[];
-  constructor() {
+  constructor(controllers?: Function[]) {
     this.metadataArgsStorage = MetadataArgsStorage.getInstance();
+    this.registerControllers(controllers || []);
+  }
+
+  /**
+   * registerControllers
+   */
+  public registerControllers(controllers: Function[]): void {
+    Container.import(controllers);
   }
 
   private getControllers() {

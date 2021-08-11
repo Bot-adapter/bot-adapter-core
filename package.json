@@ -1,6 +1,6 @@
 {
-  "name": "bot-adapter",
-  "version": "0.0.4",
+  "name": "@bot-adapter/core",
+  "version": "0.0.5",
   "description": "bot adapter for wechaty,socket.io etc...",
   "main": "dist/index.js",
   "scripts": {

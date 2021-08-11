@@ -1,0 +1,12 @@
+# node
+node_modules/
+
+# build
+dist/
+
+# log
+**/*.log
+
+# env
+.env
+.env.production

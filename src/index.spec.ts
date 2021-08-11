@@ -1,19 +1,19 @@
 import "reflect-metadata";
 
 import { Adapter } from "./adapter-builder/Adapter";
-import { Controller, Message, OnMessage } from "./decorators";
+import { Controller, Msg, OnMessage } from "./decorators";
 
 @Controller({ pattern: "支付宝" })
 class Test {
   constructor() {}
 
   @OnMessage({ pattern: "解绑" })
-  unbind(@Message() msg: any) {
+  unbind(@Msg() msg: any) {
     console.log("unbind:", msg);
   }
 
   @OnMessage({ pattern: "绑定" })
-  async bind(@Message() msg: any) {
+  async bind(@Msg() msg: any) {
     await new Promise((res) => {
       setTimeout(res, 1000);
     });
@@ -22,7 +22,7 @@ class Test {
   }
 
   @OnMessage({ pattern: "*", options: { exact: false } })
-  echo(@Message() msg: any) {
+  echo(@Msg() msg: any) {
     console.log("echo msg:", msg);
   }
 }

@@ -1,7 +1,7 @@
 import { MetadataArgsStorage } from "../adapter-builder/MetadataArgsStorage";
 import { ParameterType } from "../metadata/types/param.types";
 
-export function Message(): ParameterDecorator {
+export function Msg(): ParameterDecorator {
   return function (target, methodName, parameterIndex) {
     const metadataArgsStorage = MetadataArgsStorage.getInstance();
     metadataArgsStorage.parameters.push({
